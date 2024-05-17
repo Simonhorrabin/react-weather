@@ -8,7 +8,7 @@ function App() {
 
 
 
-   const url =`https://api.openweathermap.org/data/2.5/weather?q=charlotte&appid=90ccaf76a1c136daef345d47598c58e1`
+   const url =`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=90ccaf76a1c136daef345d47598c58e1`
 
    const searchLocation = (event) => {
     if (event.key === 'Enter') {
@@ -17,10 +17,7 @@ function App() {
             console.log(response.data)
         })
     }
-   
    }
-
-
 
     return(
         <div className="app">
@@ -28,6 +25,7 @@ function App() {
                 <input 
                 value={location}
                 onChange={event => setLocation(event.target.value)}
+                onKeyPress={searchLocation}
                 placeholder='Enter Location'
                 type="text"></input>
             </div>
