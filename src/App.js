@@ -13,7 +13,7 @@ function App() {
    const searchLocation = () => {
     axios.get(url).then((response) => {
         setData(response.data)
-        console.log()
+        console.log(response.data)
     })
    }
 
